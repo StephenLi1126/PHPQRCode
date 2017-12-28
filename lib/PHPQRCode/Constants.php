@@ -42,6 +42,9 @@ class Constants
     const STRUCTURE_HEADER_BITS =  20;
     const MAX_STRUCTURED_SYMBOLS = 16;
 
+    const QR_BG_COLOR = [255, 255, 255];
+    const QR_CODE_COLOR = [0, 0, 0];
+
     // Maks
     const N1 = 3;
 	const N2 = 3;

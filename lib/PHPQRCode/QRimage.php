@@ -27,9 +27,9 @@ namespace PHPQRCode;
 class QRimage {
 
     //----------------------------------------------------------------------
-    public static function png($frame, $filename = false, $pixelPerPoint = 4, $outerFrame = 4,$saveandprint=FALSE)
+    public static function png($frame, $filename = false, $pixelPerPoint = 4, $outerFrame = 4, $saveandprint=FALSE, $qrBgColor = Constants::QR_BG_COLOR, $qrCodeColor = Constants::QR_CODE_COLOR)
     {
-        $image = self::image($frame, $pixelPerPoint, $outerFrame);
+        $image = self::image($frame, $pixelPerPoint, $outerFrame, $qrBgColor, $qrCodeColor);
 
         if ($filename === false) {
             Header("Content-type: image/png");
@@ -63,7 +63,7 @@ class QRimage {
     }
 
     //----------------------------------------------------------------------
-    public static function image($frame, $pixelPerPoint = 4, $outerFrame = 4)
+    public static function image($frame, $pixelPerPoint = 4, $outerFrame = 4, $qrBgColor = Constants::QR_BG_COLOR, $qrCodeColor = Constants::QR_CODE_COLOR)
     {
         $h = count($frame);
         $w = strlen($frame[0]);
@@ -73,8 +73,9 @@ class QRimage {
 
         $base_image =ImageCreate($imgW, $imgH);
 
-        $col[0] = ImageColorAllocate($base_image,255,255,255);
-        $col[1] = ImageColorAllocate($base_image,0,0,0);
+        $col[0] = ImageColorAllocate($base_image, $qrBgColor[0], $qrBgColor[1], $qrBgColor[2]);
+        $col[1] = ImageColorAllocate($base_image, $qrCodeColor[0], $qrCodeColor[1], $qrCodeColor[2]);
+
 
         imagefill($base_image, 0, 0, $col[0]);
 
