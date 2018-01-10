@@ -1,8 +1,8 @@
 {
-    "name": "aferrandini/phpqrcode",
+    "name": "frontnode/phpqrcode",
     "description": "PHPQRCode porting and changed for PHP 5.3 compatibility",
     "keywords": ["php", "qrcode", "barcode"],
-    "homepage": "https://github.com/aferrandini/PHPQRCode",
+    "homepage": "https://github.com/frontnode/PHPQRCode",
     "type": "library",
     "license": "MIT",
     "authors": [
